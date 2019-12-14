@@ -1,7 +1,7 @@
 <?php
 
-$path = var_dump($_SERVER['PATH_INFO'] ?? '/');
+$path = $_SERVER['PATH_INFO'] ?? '/';
 
-if($path == '/'){
-    require __DIR__ . '/';
+if($path === '/'){
+    require __DIR__ . '/site/routes.php';
 }
