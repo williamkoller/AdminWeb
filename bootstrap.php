@@ -1,31 +1,9 @@
 <?php
-
-/**
- * @param $route
- * @return bool
- */
-function resolve($route){
-    $path = $_SERVER['PATH_INFO'] ?? '/';
-    $route = '/^' . str_replace('/','\/',$route) . '$/';
-
-    if (preg_match($route, $path, $params)){
-        return $params;
-    }
-    return false;
-}
-
-/**
- * @param $content
- * @param $template
- * @param array $data
- * @return mixed
- */
-function render($content, $template, array $data = [])
-{
-    $content =  __DIR__ . '/templates/' . $content . '.tpl.php';
-    return include __DIR__ . '/templates/' . $template . '.tpl.php';
-}
-
+include __DIR__ . 'config.php';
+include __DIR__ . '/scr/error_handler.php';
+include __DIR__ . '/scr/resolve-route.php';
+include __DIR__ . '/scr/render.php';
+include __DIR__ . '/scr/connection.php';
 
 if (resolve('/admin/?(.*)')){
     require __DIR__ . '/admin/routes.php';
