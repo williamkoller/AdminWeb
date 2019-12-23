@@ -9,6 +9,6 @@
 </head>
 <body>
     <h1>Administração</h1>
-    <?php include $content;?>
+    <?php  $content;?>
 </body>
 </html>
