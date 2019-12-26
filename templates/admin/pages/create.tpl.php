@@ -1,4 +1,4 @@
-<h3>Administração de páginas</h3>
+<h3>Nova página</h3>
 <form action="" method="post">
     <div class="form-group">
         <label for="pagesTitle">Título</label>
