@@ -16,6 +16,7 @@
     @media screen and (max-width: 1024px) {
    
 }
+
 </style>
 <body class="d-flex flex-column">
     <div id="header">
