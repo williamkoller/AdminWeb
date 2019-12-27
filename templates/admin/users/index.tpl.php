@@ -9,20 +9,16 @@
     </tr>
   </thead>
   <tbody>
+  <?php foreach ($data['users'] as $user):?>
     <tr>
-      <td>1</td>
-      <td>william@gmail.com</td>
-      <td class="text-right">
-        <a href="/admin/users/1" class="btn btn-primary btn-sn">Ver</a>
-      </td>
+        <td><?php echo $user['id'];?></td>
+        <td><?php echo $user['email'];?></td>
+        <td class="text-right">
+            <a href="/admin/users/<?php echo $user['id'];?>" class="btn btn-primary btn-sn">Ver</a>
+        </td>
     </tr>
-    <tr>
-      <td>2</td>
-      <td>wkoller@gmail.com</td>
-      <td class="text-right">
-        <a href="/admin/users/2" class="btn btn-primary btn-sn">Ver</a>
-      </td>
-    </tr>
+
+  <?php endforeach ?>
   </tbody>
 
 </table>
