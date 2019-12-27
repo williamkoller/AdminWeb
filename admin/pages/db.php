@@ -17,7 +17,7 @@ function pages_get_data($redirectOnError)
 
 $pages_all = function () use ($conn)
 {
-  // buscar todas as páginas
+  // find alll pages
   $result = $conn->query('SELECT * FROM pages');
   return $result->fetch_all(MYSQLI_ASSOC);
 
@@ -25,7 +25,7 @@ $pages_all = function () use ($conn)
 
 $pages_one = function ($id) use ($conn)
 {
-  // buscar uma única página
+  // find one page
 
     $sql = 'SELECT * FROM pages WHERE id = ?';
     $stmt = $conn->prepare($sql);
@@ -38,7 +38,7 @@ $pages_one = function ($id) use ($conn)
 
 $pages_create = function () use ($conn)
 {
-  // cadastra página
+  // create page
 
     $data = pages_get_data('/admin/pages/create');
     $sql = 'INSERT INTO pages (title, url, body, updated, created) VALUES (?, ?, ?, NOW(), NOW())';
@@ -52,7 +52,7 @@ $pages_create = function () use ($conn)
 
 $pages_edit = function ($id) use ($conn)
 {
-  // atualiza uma página
+  // update page
 
   $data = pages_get_data('/admin/pages/' . $id . '/edit' );
   $sql = 'UPDATE pages SET title=?, url=?, body=?, updated=NOW() where id=?';
@@ -66,7 +66,7 @@ $pages_edit = function ($id) use ($conn)
 
 $pages_delete = function ($id) use ($conn)
 {
-  // deleta página
+  // delete page
 
   $sql = 'DELETE FROM pages WHERE id=?';
 
