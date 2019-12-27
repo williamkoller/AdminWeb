@@ -2,6 +2,7 @@
 
 if (resolve('/')) {
     render('site/home', 'site');
+    header('Location: /admin');
 } elseif (resolve('/contato')){
     render('site/contato', 'site');
 } else {
