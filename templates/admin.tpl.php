@@ -28,10 +28,10 @@
                         <span href="" class="nav-link text-white-50"><small>MENU</small></span>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link active">Páginas</a>
+                        <a href="/admin/pages" class="nav-link" >Páginas</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">Usuários</a>
+                        <a href="/admin/users" class="nav-link">Usuários</a>
                     </li>
                 </ul>
             </div>
