@@ -70,9 +70,22 @@
             method: 'POST',
             data: form,
             contentType: false,
-            processData: false
-        }).done(function () {
-            console.log('Deu certo');
+            processData: false,
+            xhr: function(){
+                const xhr = $.ajaxSettings.xhr();
+                xhr.upload.addEventListener('progress', function(e){
+                    let progress = e.loaded / e.total * 100;
+                    attachment.setUploadProgress(progress);
+                });
+
+                return xhr;
+            }
+        }).done(function (response) {
+            console.log(response)
+            attachment.setAttributes({
+                url: response,
+                href: response
+            });
         }).fail(function () {
             console.log('Deu errado');
         })
