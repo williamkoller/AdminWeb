@@ -25,6 +25,8 @@ $pages_all = function () use ($conn)
 
 $pages_one = function ($id) use ($conn)
 {
+  // buscar uma única página
+
     $sql = 'SELECT * FROM pages WHERE id = ?';
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $id);
@@ -32,32 +34,47 @@ $pages_one = function ($id) use ($conn)
 
     $result = $stmt->get_result();
     return $result->fetch_assoc();
-  // buscar uma única página
 };
 
 $pages_create = function () use ($conn)
 {
+  // cadastra página
+
     $data = pages_get_data('/admin/pages/create');
     $sql = 'INSERT INTO pages (title, url, body, updated, created) VALUES (?, ?, ?, NOW(), NOW())';
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('sss', $data['title'], $data['url'], $data['body']);
 
-  // cadastra página
     flash('Criou registro com sucesso!!', 'success');
 
     return $stmt->execute();
 };
 
-$pages_edit = function ($id)
+$pages_edit = function ($id) use ($conn)
 {
   // atualiza uma página
-    flash('Atualizou registro com sucesso!!', 'success');
+
+  $data = pages_get_data('/admin/pages/' . $id . '/edit' );
+  $sql = 'UPDATE pages SET title=?, url=?, body=?, updated=NOW() where id=?';
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param('sssi', $data['title'], $data['url'], $data['body'], $id);
+  flash('Atualizou registro com sucesso!!', 'success');
+  return $stmt->execute();
+
 
 };
 
-$pages_delete = function ()
+$pages_delete = function ($id) use ($conn)
 {
   // deleta página
-    flash('Deletou registro com sucesso!!', 'success');
+
+  $sql = 'DELETE FROM pages WHERE id=?';
+
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param('i', $id);
+
+  flash('Deletou registro com sucesso!!', 'success');
+  return $stmt->execute();
+
 
 };
