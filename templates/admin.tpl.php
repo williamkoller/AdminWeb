@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="/resources/trix/trix.css">
+    <link href="/resources/pnotify/pnotify.custom.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="/css/style.css">
     <title>Painel Administrativo</title>
 </head>
@@ -47,8 +48,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="/resources/trix/trix.js"></script>
+<script src="/resources/pnotify/pnotify.custom.min.js"></script>
 <script>
     <?php flash();?>
+
+    const confirmEl = document.querySelector('.confirm');
+    if (confirmEl){
+        confirmEl.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (confirm('Tem certeza que quer fazer isso?!')){
+                window.location = e.target.getAttribute('href');
+            }
+        });
+    }
+
 
 </script>
 </body>
