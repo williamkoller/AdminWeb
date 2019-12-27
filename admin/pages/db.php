@@ -23,8 +23,15 @@ $pages_all = function () use ($conn)
 
 };
 
-$pages_one = function ($id)
+$pages_one = function ($id) use ($conn)
 {
+    $sql = 'SELECT * FROM pages WHERE id = ?';
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('i', $id);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+    return $result->fetch_assoc();
   // buscar uma única página
 };
 
