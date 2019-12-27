@@ -2,7 +2,7 @@
 <form action="" method="post">
     <div class="form-group">
         <label for="pagesTitle">Título</label>
-        <input name="title" id="pagesTitle" type="text" class="form-control" placeholder="Aqui vai o título da página ..." required value="Página inicial">
+        <input name="title" id="pagesTitle" type="text" class="form-control" placeholder="Aqui vai o título da página ..." required value="<?php echo $data['page']['title'];?>">
     </div>
 
     <div class="form-group">
@@ -11,16 +11,16 @@
             <div class="input-group-prepend">
                 <span class="input-group-text">/</span>
             </div>
-            <input name="url" id="pagesUrl" type="text" class="form-control" placeholder="URL amigável, deixe em branco para informar a página inicial..">
+            <input name="url" id="pagesUrl" type="text" class="form-control" placeholder="URL amigável, deixe em branco para informar a página inicial.." value="<?php echo $data['page']['url'];?>">
         </div>
     </div>
 
     <div class="form-group">
-        <input id="pagesBody" type="hidden" name="body" value="<h3>Página inicial</h3><div>Está é página inicial do site</div>">
+        <input id="pagesBody" type="hidden" name="body" value="<?php echo $data['page']['body'];?>">
         <trix-editor input="pagesBody"></trix-editor>
     </div>
 
     <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
 </form>
 <hr>
-<a href="/admin/pages/1" class="btn btn-secondary btn-sm">Voltar</a>
+<a href="/admin/pages/<?php echo $data['page']['id'];?>" class="btn btn-secondary btn-sm">Voltar</a>
