@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/resources/trix/trix.css">
     <link href="/resources/pnotify/pnotify.custom.min.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/public/favicon.ico" />
     <script src="https://kit.fontawesome.com/24fa806dab.js" crossorigin="anonymous"></script>
     <title>Painel Administrativo</title>
 </head>
