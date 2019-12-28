@@ -5,7 +5,7 @@ $login = function () use ($conn)
     $email = filter_input(INPUT_POST, 'email');
     $password = filter_input(INPUT_POST, 'password');
 
-    if (is_null($email) or is_null($password)){
+    if ($password === null || $email === null){
         return false;
     }
 
