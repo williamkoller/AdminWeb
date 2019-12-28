@@ -3,13 +3,24 @@
     "license": "MIT",
     "description": "Site Admin with PHP",
     "type": "project",
-    "require": {
-        "php": "^7.4"
-    },
     "authors": [
         {
             "name": "William Koller",
             "email": "wkoller25@gmail.com"
         }
-    ]
+    ],
+    "config": {
+        "vendor-dir": "vendor/"
+    },
+    "autoload": {
+        "psr-4": {
+            "Source\\": "source/"
+        },
+        "files": [
+            "source/Config.php"
+        ]
+    },
+    "require": {
+        "php": "^7.4"
+    }
 }
