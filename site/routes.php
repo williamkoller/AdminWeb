@@ -29,8 +29,7 @@ if (resolve('/contato')){
             break;
         }
     }
-
-    header('Location:  /admin');
+    return header('Location: /admin');
 
     render('site/page', 'site', compact('pages', 'page'));
 }
