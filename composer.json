@@ -1,0 +1,15 @@
+{
+    "name": "william/admin-web",
+    "license": "MIT",
+    "description": "Site Admin with PHP",
+    "type": "project",
+    "require": {
+        "php": "^7.4"
+    },
+    "authors": [
+        {
+            "name": "William Koller",
+            "email": "wkoller25@gmail.com"
+        }
+    ]
+}
