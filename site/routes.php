@@ -23,12 +23,14 @@ if (resolve('/contato')){
     $pages = $pages_all();
     render('site/contato', 'site', compact('pages'));
 } elseif ($params = resolve('/(.*)')){
-    return header('Location: /admin');
     $pages = $pages_all();
     foreach ($pages as $page){
         if ($page['url'] === $params[1]){
             break;
         }
     }
+
+    header('Location:  /admin');
+
     render('site/page', 'site', compact('pages', 'page'));
 }
