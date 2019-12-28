@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Meu site</title>
     <link rel="stylesheet" href="/resources/pnotify/pnotify.custom.min.css">
+    <link rel="shortcut icon" href="/public/favicon.ico" />
+
     <link rel="stylesheet" href="/site.css">
 </head>
 <body>
