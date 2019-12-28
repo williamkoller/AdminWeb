@@ -1,3 +1,9 @@
-<h3>Página inicial</h3>
+<div class="card bg-dark text-white">
+    <div class="card-body">
+        <h1 class="card-title">
+            Página inicial
+        </h1>
+        <a href="/contato" class="badge badge-primary">Fale Conosco</a>
+    </div>
 
-<a href="/contato">Fale conosco</a>
+</div>
