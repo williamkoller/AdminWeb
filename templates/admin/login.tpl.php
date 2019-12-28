@@ -8,6 +8,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="/resources/pnotify/pnotify.custom.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" href="/public/favicon.ico" />
+
     <link rel="stylesheet" href="/css/style.css">
     <title>Painel Administrativo</title>
 </head>
