@@ -8,8 +8,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
+}
+
+.container{
+    width: 100%;
 }
 
 #header {
@@ -60,15 +64,15 @@ body {
 #content {
     max-width: 1400px;
     padding: 0 20px;
-    margin: 0 auto;
+    margin: 0;
     flex-grow: 1;
 }
 
 #footer {
     text-align: center;
     padding: 20px;
-    background-color: #eee;
-    border: 1px solid #ccc;
+    background-color: #000000;
+    border: 1px solid #005cbf;
     margin: 0;
 }
 
@@ -82,7 +86,8 @@ h4 {
 }
 
 .col-1, .col-2 {
-    padding: 10px;
+    padding: 60px;
+
 }
 
 .col-1 {
