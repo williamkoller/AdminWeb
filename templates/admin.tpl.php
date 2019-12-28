@@ -8,8 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="/resources/trix/trix.css">
-    <link href="/resources/pnotify/pnotify.custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="/resources/pnotify/pnotify.custom.min.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/24fa806dab.js" crossorigin="anonymous"></script>
     <title>Painel Administrativo</title>
 </head>
 <style>
@@ -21,7 +22,7 @@
 <body class="d-flex flex-column">
     <div id="header">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a href="" class="navbar-brand">Admin</a>
+            <a href="/admin" class="navbar-brand">Admin</a>
             <span class="navbar-text">Painel Administrativo</span>
         </nav>
     </div>
@@ -33,10 +34,10 @@
                         <span href="" class="nav-link text-white-50"><small>MENU</small></span>
                     </li>
                     <li class="nav-item">
-                        <a href="/admin/pages" class="nav-link" >Páginas</a>
+                        <a href="/admin/pages" class="nav-link<?php if (resolve('/admin/pages.*')): ?> active<?php endif; ?>" ><i class="far fa-file-alt"></i> Páginas</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/admin/users" class="nav-link">Usuários</a>
+                        <a href="/admin/users" class="nav-link<?php if (resolve('/admin/users.*')): ?> active<?php endif; ?>"><i class="fas fa-user"></i> Usuários</a>
                     </li>
                 </ul>
             </div>
